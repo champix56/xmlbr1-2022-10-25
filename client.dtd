@@ -1,0 +1,7 @@
+<!ELEMENT destinataire (prenom,prenom?,prenom?,prenom?,nom)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT cp (#PCDATA)>
+<!ELEMENT client ((destinataire, adr1, adr2, cp, ville))>
+<!ELEMENT adr2 EMPTY>
+<!ELEMENT adr1 (#PCDATA)>

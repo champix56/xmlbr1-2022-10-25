@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY euro "&#x20ac;">
+<!ENTITY % fichier_clientDtd SYSTEM "client.dtd">
+%fichier_clientDtd;
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT surface (#PCDATA)>
+<!ATTLIST surface
+	unite CDATA #REQUIRED
+>
+<!ELEMENT stotligne (#PCDATA)>
+<!ELEMENT ref (#PCDATA)>
+<!ELEMENT phtByUnit (#PCDATA)>
+<!ELEMENT nbUnit (#PCDATA)>
+<!ATTLIST nbUnit
+	typeUnit CDATA #REQUIRED
+>
+<!ELEMENT lignes ((ligne+))>
+<!ELEMENT ligne ((info | (ref, designation, surface?, phtByUnit, nbUnit, stotligne)))>
+<!ELEMENT info (#PCDATA)>
+<!ELEMENT factures ((facture+))>
+<!ATTLIST factures
+	adr1ets CDATA #REQUIRED
+	adr2ets CDATA #REQUIRED
+	cpets CDATA #REQUIRED
+	dateeditionXML CDATA #REQUIRED
+	logourl CDATA #REQUIRED
+	rsets CDATA #REQUIRED
+	villeets CDATA #REQUIRED
+>
+<!ELEMENT facture ((client?, lignes))>
+<!ATTLIST facture
+	datefacture CDATA #REQUIRED
+	idclient CDATA #REQUIRED
+	numfacture CDATA #REQUIRED
+	refdevis CDATA #IMPLIED
+	type CDATA #REQUIRED
+>
+
+<!ELEMENT designation (#PCDATA)>
