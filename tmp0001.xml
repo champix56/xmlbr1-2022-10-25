@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE factures [
+<!DOCTYPE facture [
 	<!ENTITY euro "&#x20AC;">
 ]>
 <factures rsets="&euro;CO-nome" adr1ets="AV PIERRE GEORGES" adr2ets="" logourl="1.jpg" cpets="75015" villeets="Paris" dateeditionXML="2012-12-15">
@@ -103,16 +103,4 @@
 			</ligne>
 		</lignes>
 	</facture>
-	<clients>
-		<unClient>
-			<destinataire>
-				<prenom>Alexandre</prenom>
-				<nom>DESORBAIX</nom>
-			</destinataire>
-			<adr1>chemin de l'homme dormant</adr1>
-			<adr2/>
-			<cp>54230</cp>
-			<ville>Nancy Lest</ville>
-		</unClient>
-	</clients>
 </factures>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (http://www.altova.com) by ﻿champix (champix) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="T_unClient">
+		<xs:sequence>
+			<xs:element ref="destinataire"/>
+			<xs:element ref="adr1"/>
+			<xs:element ref="adr2"/>
+			<xs:element ref="cp"/>
+			<xs:element ref="ville"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_destinataire">
+		<xs:sequence>
+			<xs:element ref="prenom"/>
+			<xs:element ref="nom"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_clients">
+		<xs:sequence>
+			<xs:element ref="unClient"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_client">
+		<xs:sequence>
+			<xs:element ref="destinataire"/>
+			<xs:element ref="adr1"/>
+			<xs:element ref="adr2"/>
+			<xs:element ref="cp"/>
+			<xs:element ref="ville"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_adr2"/>
+	<xs:element name="unClient" type="T_unClient"/>
+	<xs:element name="cp" type="xs:int"/>
+	<xs:element name="clients" type="T_clients"/>
+	<xs:element name="client" type="T_client"/>
+	<xs:element name="adr2" type="T_adr2"/>
+	<xs:element name="adr1" type="xs:string"/>
+	<xs:element name="destinataire" type="T_destinataire"/>
+	<xs:element name="nom" type="xs:string"/>
+	<xs:element name="prenom" type="xs:string"/>
+	<xs:element name="ville" type="xs:string"/>
+</xs:schema>

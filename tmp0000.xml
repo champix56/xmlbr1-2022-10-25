@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE factures [
-	<!ENTITY euro "&#x20AC;">
-]>
+<!DOCTYPE factures SYSTEM "facture3.dtd">
 <factures rsets="&euro;CO-nome" adr1ets="AV PIERRE GEORGES" adr2ets="" logourl="1.jpg" cpets="75015" villeets="Paris" dateeditionXML="2012-12-15">
 	<facture numfacture="12" datefacture="2012-08-10" type="Devis" idclient="123">
 		<client>
-			<destinataire>
-				<prenom>Alexandre</prenom>
-				<nom>DESORBAIX</nom>
-			</destinataire>
+			<destinataire>jean rostremer</destinataire>
 			<adr1>chemin de l'homme dormant</adr1>
 			<adr2/>
 			<cp>54230</cp>
@@ -21,9 +16,6 @@
 				<phtByUnit>5.95</phtByUnit>
 				<nbUnit typeUnit="HOUR">1.5</nbUnit>
 				<stotligne>8.922</stotligne>
-			</ligne>
-			<ligne>
-				<info>Ligne d'info de faturation</info>
 			</ligne>
 			<ligne>
 				<ref>REF-2135</ref>
@@ -65,7 +57,7 @@
 			</ligne>
 		</lignes>
 	</facture>
-	<facture numfacture="08" datefacture="2013-07-04" type="Devis" idclient="234">
+	<facture numfacture="08" datefacture="2013-07-04" type="devis" idclient="234">
 		<lignes>
 			<ligne>
 				<ref>REF-2234</ref>
@@ -77,7 +69,7 @@
 			</ligne>
 		</lignes>
 	</facture>
-	<facture numfacture="05" datefacture="2012-06-21" type="Facture" idclient="132">
+	<facture numfacture="05" datefacture="2012-06-21" type="facture" idclient="132">
 		<lignes>
 			<ligne>
 				<ref>REF-2234</ref>
@@ -103,16 +95,5 @@
 			</ligne>
 		</lignes>
 	</facture>
-	<clients>
-		<unClient>
-			<destinataire>
-				<prenom>Alexandre</prenom>
-				<nom>DESORBAIX</nom>
-			</destinataire>
-			<adr1>chemin de l'homme dormant</adr1>
-			<adr2/>
-			<cp>54230</cp>
-			<ville>Nancy Lest</ville>
-		</unClient>
-	</clients>
+
 </factures>
