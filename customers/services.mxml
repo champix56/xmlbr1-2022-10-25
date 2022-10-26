@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" xmlns:srv="generated.webservices.*">
+<mx:Script>
+	<![CDATA[
+		import mx.controls.Alert;
+		import mx.collections.ArrayCollection;
+		
+		[Bindable]
+		private var usersArrayCol:ArrayCollection ;
+			
+		public function r1():void{
+			trace(myS1.search_lastResult[0].nom);
+			usersArrayCol  = new ArrayCollection(myS1.search_lastResult);
+			
+		}
+		public function r2():void{
+			trace(myS2.listing_lastResult[1].nom);
+			usersArrayCol  = new ArrayCollection(myS2.listing_lastResult);
+		}
+		public function r3():void{
+			trace(myS3.connect_lastResult);
+		}
+	]]>
+</mx:Script>
+
+<srv:CustomersService id="myS1" Search_result="r1()">
+<srv:search_request_var>
+<srv:Search_request keywords="{txtName.text}"/>
+</srv:search_request_var>
+</srv:CustomersService>
+	<mx:TextInput id="txtName"/>
+<mx:Button id="myB1" label="Recherche" click="myS1.search_send()" />
+
+<srv:CustomersService id="myS2"  Listing_result="r2()">
+<srv:listing_request_var>
+	<srv:Listing_request option="all"/>
+</srv:listing_request_var>
+</srv:CustomersService>
+<mx:Button id="myB2" label="List" click="myS2.listing_send()" />
+
+<srv:CustomersService id="myS3" Connect_result="r3()" >
+	<srv:connect_request_var>
+		<srv:Connect_request login="FLX" mdp="FLH"/>
+	</srv:connect_request_var>
+</srv:CustomersService>
+<mx:Button id="myB3" label="Test" click="myS3.connect_send()" />
+	<mx:AdvancedDataGrid id="adg1" designViewDataType="tree" dataProvider="{usersArrayCol}">
+	</mx:AdvancedDataGrid>
+
+</mx:Application>
