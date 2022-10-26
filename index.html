@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enter your title here</title>
+  </head>
+  <body>
+    <h1>Enter your header here</h1>
+    <button>cliquez pour charger les donnees</button>
+
+    <hr />
+    <div id="wrapper" />
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+		let domp=new DOMParser();
+		fetch('./xsl/html.xslt').then(r=>r.text()).then(t=>{
+		let xsl=domp.parseFromString(t,'text/xml');
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xsl);
+const frstr='<factures rsets="&euro;CO-nome" adr1ets="AV PIERRE GEORGES" adr2ets="" logourl="1.jpg" cpets="75015" villeets="Paris" dateeditionXML="2012-12-15"><facture numfacture="12" datefacture="2012-08-10" type="Devis" idclient="123"><client><destinataire><prenom>Alexandre</prenom><nom>DESORBAIX</nom></destinataire><adr1>chemin de l\'homme dormant</adr1><adr2/><cp>54230</cp><ville>Nancy Lest</ville></client><lignes><ligne><ref>REF-2134</ref><designation>Lavage SOL </><phtByUnit>5.95</phtByUnit><nbUnit typeUnit="HOUR">1.5</nbUnit><stotligne>8.922</stotligne></ligne><ligne><info>Ligne d\'info  </info></ligne><ligne><ref>REF-2135</ref><designation>Peinture SOL forfait &lt;20m² </designation><phtByUnit>8.95</phtByUnit><nbUnit typeUnit="UNIT">1.5</nbUnit><stotligne>13.425</stotligne></ligne><ligne><ref>REF-1934</ref><designation>Peinture Blanc pot 5L</designation><phtByUnit>9.95</phtByUnit><nbUnit typeUnit="UNIT">2</nbUnit><stotligne>19.90</stotligne></ligne></lignes></facture></factures>';
+let xml=domp.parseFromString(frstr,'text/xml');
+        let factures=xsltProcessor.transformToFragment(xml, document); 
+		console.log(factures)
+        let wr=document.querySelector('#wrapper');
+		wr.innerHTML=""; 
+		wr.appendChild(factures.firstChild);
+		})
+		
+      });
+    </script>
+  </body>
+</html>

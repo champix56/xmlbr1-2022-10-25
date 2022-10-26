@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet href="xsl/xlsx-xml.xsl" type="text/xsl"?>
-<!DOCTYPE factures [
-	<!ENTITY euro "&#x20AC;">
-]>
-<factures rsets="&euro;CO-nome" adr1ets="AV PIERRE GEORGES" adr2ets="" logourl="1.jpg" cpets="75015" villeets="Paris" dateeditionXML="2012-12-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="factGenNoEden.xsd">
+<?xml-stylesheet href="xlsx-xml.xsl" type="text/xsl"?>
+<factures rsets="CO-nome" adr1ets="AV PIERRE GEORGES" adr2ets="" logourl="1.jpg" cpets="75015" villeets="Paris" dateeditionXML="2012-12-15" >
 	<facture numfacture="12" datefacture="2012-08-10" type="Devis" idclient="123">
 		<client>
 			<destinataire>
